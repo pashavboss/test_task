@@ -6,7 +6,7 @@ from models import Article
 
 class ArticleView(MethodView):
 
-    def get(self, request):
+    def get(self):
         articles = Article.get_all()
         return jsonify({
             'data': [article.serialize() for article in articles]
